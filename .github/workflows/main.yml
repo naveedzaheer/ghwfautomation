@@ -11,6 +11,10 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
+      call_id:
+        description: 'Call Id'
+        required: true
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
