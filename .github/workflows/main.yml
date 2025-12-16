@@ -1,5 +1,5 @@
 name: Build 
-run-name: Deploy ${{input.call_id}}
+run-name: Deploy ${{inputs.call_id}}
 
 on:
   push:
