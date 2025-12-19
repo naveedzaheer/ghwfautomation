@@ -95,12 +95,12 @@ In summary, this Azure Logic Apps automates the triggering, monitoring, and repo
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Action Output:** No output produced directly.    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Send_an_email_(V2)_1**    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Type:** Shared    
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Description:** Sends an email using the Office 365 connector to "azureadmin@nzazuredemo.com" with a subject "Test2". The email body contains the status of the parsed workflow run. It executes after parsing JSON of the filtered item.    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Description:** Sends an email using the Office 365 connector to "<email-address>" with a subject "Test2". The email body contains the status of the parsed workflow run. It executes after parsing JSON of the filtered item.    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Action Input:** Sends a POST request to the Office 365 Mail API with recipient email, subject "Test2", HTML body containing the workflow run status, and normal importance.    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Action Output:** No output returned; it performs the email sending operation.    
 &ensp;&ensp;&ensp;&ensp; - **Send_an_email_(V2)**    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Type:** Shared    
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Description:** Sends an email to "azureadmin@nzazuredemo.com" with subject "Test". The body contains the JSON output of the "Get_Workflow_Runs" action. It runs after "Get_Workflow_Runs" completes successfully.    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Description:** Sends an email to "<email-address>" with subject "Test". The body contains the JSON output of the "Get_Workflow_Runs" action. It runs after "Get_Workflow_Runs" completes successfully.    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Action Input:** Posts to the Office 365 "Mail" endpoint with recipient email, subject "Test", and body displaying the raw workflow runs JSON data with normal importance.    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp; - **Action Output:** No output is returned; this action sends an informational email.    
  - **InitializeAllVariables**    
