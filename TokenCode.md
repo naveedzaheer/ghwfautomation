@@ -32,11 +32,6 @@ public static async Task<Results> Run(WorkflowContext context, ILogger log)
   string WorkflowFile = "main.yml";
   string Branch = "main";
   
-  JToken triggerOutputs = (await context.GetTriggerResults().ConfigureAwait(false)).Outputs;
-
-  ////the following dereferences the 'name' property from trigger payload.
-  var name = triggerOutputs?["body"]?["GetSecret"]?.ToString();
-
   var actionOutputs = (await context.GetActionResults("GetSecret").ConfigureAwait(false)).Outputs;
   var privateKeyPem  = actionOutputs["body"]["value"];
 string signedToken = null;
@@ -66,8 +61,6 @@ string installToken = "";
 using var http = new HttpClient();
 {
     http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", signedToken);
-    http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("GHApp", "1.0"));
-
     var url = $"https://api.github.com/app/installations/{InstallationId}/access_tokens";
     var response = await http.PostAsync(url, null);
     response.EnsureSuccessStatusCode();
