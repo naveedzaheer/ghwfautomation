@@ -1,4 +1,3 @@
-**The following content is AI generated and might contain incorrect information. Before you use this content, make sure to review for inaccuracies.**    
 # Summary    
 This Azure Logic Apps workflow is designed to trigger a GitHub Actions workflow dispatch event on a specific GitHub repository. When it receives an HTTP POST request with a Workflow ID, it performs the following primary steps:  
   
